@@ -26,8 +26,7 @@ jobs:
         with:
           version: '1.8.3'
       - run: poetry install
-      - run: make lint
-      - run: make test
+      - run: poetry run check
         env:
           API_BASE_URL: ${{ vars.TASTYTRADE_CERT_URL }}
           TASTYTRADE_LOGIN: ${{ secrets.TASTYTRADE_CERT_LOGIN }}
